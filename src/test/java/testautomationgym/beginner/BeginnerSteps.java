@@ -9,15 +9,13 @@ public class BeginnerSteps implements En {
     WebDriver driver;
     final String BASE_URL = "localhost:3000";
 
-    BeginnerSteps() {
-        Given("^I am on the \"([^\"]*)\" page$", (String page) -> {
-            driver.get(BASE_URL);
-        });
-    }
-
-    private void BeginnerSteps(WebDriver driver) {
+    public BeginnerSteps() {
         Before((Scenario scenario) -> {
             this.driver = new FirefoxDriver();
+        });
+
+        Given("^I am on the \"([^\"]*)\" page$", (String page) -> {
+            driver.get(BASE_URL);
         });
     }
 }
