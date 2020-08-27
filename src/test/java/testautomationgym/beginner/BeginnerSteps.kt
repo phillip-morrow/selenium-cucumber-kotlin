@@ -1,21 +1,18 @@
-package testautomationgym.beginner;
+package testautomationgym.beginner
 
-import cucumber.api.Scenario;
-import cucumber.api.java8.En;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import io.cucumber.java8.En
+import org.openqa.selenium.WebDriver
+import io.cucumber.java8.HookBody
+import io.cucumber.java8.Scenario
+import org.openqa.selenium.firefox.FirefoxDriver
+import io.cucumber.java8.StepDefinitionBody
 
-public class BeginnerSteps implements En {
-    WebDriver driver;
-    final String BASE_URL = "localhost:3000";
+class BeginnerSteps : En {
+    var driver: WebDriver? = null
+    val BASE_URL = "localhost:3000"
 
-    public BeginnerSteps() {
-        Before((Scenario scenario) -> {
-            this.driver = new FirefoxDriver();
-        });
-
-        Given("^I am on the \"([^\"]*)\" page$", (String page) -> {
-            driver.get(BASE_URL);
-        });
+    init {
+        Before { scenario: Scenario? -> driver = FirefoxDriver() }
+        Given("^I am on the {string} page$") { page: String? -> driver!![BASE_URL] }
     }
 }

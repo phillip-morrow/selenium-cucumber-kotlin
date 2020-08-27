@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
-    testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.6'
-    testCompile group: 'info.cukes', name: 'cucumber-java8', version: '1.2.5'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-6'
+    testCompile 'io.cucumber:cucumber-java8:6.6.0'
+    testCompile 'io.cucumber:cucumber-junit:6.6.0'
 }
