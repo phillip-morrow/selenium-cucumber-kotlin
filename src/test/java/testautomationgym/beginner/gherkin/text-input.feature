@@ -1,7 +1,7 @@
 Feature: Text input form
 
   Background: User navigates to text input in beginner
-    Given I am on the "Home Page"
+    Given I am on the "Home" page
     And I click the "Beginner" menu option
     And I click the "1.1 Text" link
 
